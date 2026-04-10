@@ -1,21 +1,15 @@
-import { Component } from '@angular/core';
-import { IProduct } from './product.model';
-import { CurrencyPipe } from '@angular/common';
+export interface IProduct{
+  id: number;
+  description: string;
+  name?: string;
+  imageName: string;
+  category: string;
+  price: number;
+  discount: number;
+}
 
-@Component({
-  selector: 'book-catalog',
-  imports: [CurrencyPipe],
-  templateUrl: './catalog.html',
-  styleUrl: './catalog.scss',
-})
-export class Catalog {
-
-  filter: string = '';
-  products: IProduct[] | any[];
-
-  constructor(){
-    this.products = [
-        {
+let products: IProduct[] = [
+    {
       id: 1,
       description:
         "A handbook of agile software craftsmanship — teaches programmers to write clean, readable, and maintainable code through practical principles and examples.",
@@ -35,7 +29,6 @@ export class Catalog {
       price: 44.99,
       discount: 0,
     },
-
     {
       id: 3,
       description:
@@ -196,13 +189,4 @@ export class Catalog {
       price: 34.99,
       discount: 0.1,
     },
-    ]
-  }
-
-  getFilteredProduct(){
-    return this.filter === ''? this.products :
-    this.products.filter(item => item.category === this.filter)
-  }
-
-  
-}
+  ];
