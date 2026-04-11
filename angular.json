@@ -28,11 +28,9 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/app/home"
               }
+              
+              
             ],
             "styles": [
               "src/styles.scss"

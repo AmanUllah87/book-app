@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'book-home',
@@ -7,14 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './home.scss',
 })
 export class Home implements OnInit {
-
   constructor(){
     console.log("Constructor called")
   }
-  
   ngOnInit(): void {
-    console.log("ngOnInit Life call")
+    console.log("On Init call")
   }
-
 }
-
