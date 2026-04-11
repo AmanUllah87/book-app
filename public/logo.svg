@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 80" fill="none">
+  <!-- Left page of open book -->
+  <path d="M55 14 C44 10 22 12 8 18 L8 66 C22 61 44 59 55 63 Z" fill="#8B2635"/>
+  <!-- Right page of open book -->
+  <path d="M55 14 C66 10 88 12 102 18 L102 66 C88 61 66 59 55 63 Z" fill="#C68B3A"/>
+  <!-- Spine line -->
+  <line x1="55" y1="14" x2="55" y2="63" stroke="#FAF7F2" stroke-width="2.5"/>
+  <!-- Left page text lines -->
+  <line x1="20" y1="30" x2="48" y2="27" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <line x1="20" y1="38" x2="48" y2="35" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <line x1="20" y1="46" x2="48" y2="43" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <line x1="20" y1="54" x2="38" y2="52" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <!-- Right page text lines -->
+  <line x1="62" y1="27" x2="90" y2="30" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <line x1="62" y1="35" x2="90" y2="38" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <line x1="62" y1="43" x2="90" y2="46" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  <line x1="62" y1="52" x2="80" y2="54" stroke="#FAF7F2" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+</svg>
