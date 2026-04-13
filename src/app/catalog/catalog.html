@@ -1,4 +1,5 @@
 <div class="container">
+  {{ cartItem.length }}
   <div class="filters">
     <a class="button" (click)="productFilter = ''">All</a>
     <a class="button" (click)="productFilter = 'Programming'">Programming</a>
@@ -10,25 +11,11 @@
   <ul class="products">
     @for (item of getFilteredProducts(); track item.id) {
       <li class="product-item">
-        <div class="product">
-          <div class="product-details">
-            <img [src]="`/books/${item?.imageName}`" [alt]="item?.name" />
-            <div class="product-info">
-              <div class="name">{{ item?.name }}</div>
-              <div class="description">{{ item?.description }}</div>
-              <div class="category">Book Type: {{ item?.category }}</div>
-            </div>
-          </div>
-          <div class="price">
-            @if (item?.discount === 0) {
-              <div>{{ (item?.price | currency: 'BDT' : '৳') + 'TK' }}</div>
-            } @else {
-              <div class="discount-price">{{ item.price * (1 - item.discount) | currency }}</div>
-            }
-
-            <button class="cta">Buy</button>
-          </div>
-        </div>
+        <book-product-details
+          [product]="item"
+          .
+          (buyClicked)="addToCart($event)"
+        ></book-product-details>
       </li>
     }
   </ul>
