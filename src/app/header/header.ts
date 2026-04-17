@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { Cart } from '../cart';
 import { IProduct } from '../catalog/product.model';
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: 'book-header',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
   cartItem: IProduct[];
-  cartService: Cart;
+
   // cartS: Cart;
-  constructor() {
-    this.cartService = new Cart();
+  constructor(private cartService: Cart) {
     this.cartItem = this.cartService.getCartItem();
   }
   // constructor(private cartService: Cart) {

@@ -8,7 +8,8 @@
     <a class="button">Software Eng.</a>
   </div>
 
-  <ul class="products">
+  @if (products.length > 0) {
+    <ul class="products">
     @for (item of getFilteredProducts(); track item.id) {
       <li class="product-item">
         <book-product-details
@@ -19,4 +20,5 @@
       </li>
     }
   </ul>
+  }
 </div>

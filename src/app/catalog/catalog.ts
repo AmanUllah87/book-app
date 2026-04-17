@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { IProduct } from './product.model';
 import { CurrencyPipe, NgClass, NgStyle } from '@angular/common';
 import { ProductDetails } from '../product-details/product-details';
 import { Cart } from '../cart';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'book-catalog',
@@ -12,7 +13,7 @@ import { Cart } from '../cart';
 })
 export class Catalog implements OnInit, OnDestroy {
   ngOnDestroy(): void {}
-  products!: IProduct[];
+  products: IProduct[] = [];
   isDisabled: boolean = false;
   textColor = 'green';
   // cartService!: Cart;
@@ -21,16 +22,28 @@ export class Catalog implements OnInit, OnDestroy {
 
   cartItem: IProduct[];
 
-  cartService: Cart;
 
-  constructor() {
-    this.cartService = new Cart();
+  constructor(private cdr: ChangeDetectorRef, private cartService: Cart
+    , private activatedRoute: ActivatedRoute
+  ) {
+    // this.cartService = new Cart();
     this.cartItem = this.cartService.getCartItem();
   }
 
   ngOnInit(): void {
-    this.products = this.cartService.products;
-    this.getFilteredProducts();
+    this.activatedRoute.queryParamMap.subscribe(paramMap => {
+      this.productFilter = paramMap.get('filter') ?? '';
+    })
+    this.getProducts();
+   
+  }
+
+  getProducts(){
+    this.cartService.getProducts().subscribe(res => {
+      this.products = res;
+       this.getFilteredProducts();
+      this.cdr.detectChanges();
+    })
   }
 
   getFilteredProducts(): IProduct[] {
