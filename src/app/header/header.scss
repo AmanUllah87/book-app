@@ -17,6 +17,7 @@
   margin-right: 25px;
 }
 
+
 .brand {
   display: flex;
   align-items: center;
@@ -39,6 +40,7 @@
   letter-spacing: 1px;
   white-space: nowrap;
 }
+
 
 .cart {
   display: flex;
@@ -83,4 +85,13 @@
   position: absolute;
   top: 60px;
   right: 30px;
+}
+:host{
+  display: block;
+  margin-top: 20px;
+}
+
+:host-context(.dark){
+  display: block;
+  background-color: gray;
 }

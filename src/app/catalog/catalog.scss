@@ -132,3 +132,7 @@ a {
 .strikethrough {
   text-decoration: line-through;
 }
+:host-context(.dark){
+  display: block;
+  background-color: gray;
+}

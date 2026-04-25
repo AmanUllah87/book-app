@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   imports: [CurrencyPipe, NgClass, NgStyle, ProductDetails],
   templateUrl: './catalog.html',
   styleUrl: './catalog.scss',
+  encapsulation: ViewEncapsulation.ExperimentalIsolatedShadowDom
 })
 export class Catalog implements OnInit, OnDestroy {
   ngOnDestroy(): void {}

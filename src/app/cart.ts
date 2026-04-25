@@ -201,7 +201,7 @@ export class Cart {
   //   return fetch('http://localhost:3000/api/books')
   // }
   getProducts(): Observable<IProduct[]>{
-    return this.http.get<IProduct[]>(`${this.baseUrl}/api/books`)
+    return this.http.get<IProduct[]>(`/api/books`)
   }
 
   carts: IProduct[] = [];

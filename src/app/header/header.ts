@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Cart } from '../cart';
 import { IProduct } from '../catalog/product.model';
 import { RouterLink, RouterLinkActive } from "@angular/router";
@@ -8,9 +8,11 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.scss',
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class Header {
   cartItem: IProduct[];
+  isDark: boolean = false;
 
   // cartS: Cart;
   constructor(private cartService: Cart) {
@@ -21,4 +23,9 @@ export class Header {
   //   this.cartItem = this.cartS.getCartItem();
   //   console.log(this.cartService.getCartItem());
   // }
+
+  changeAppTheme(){
+    this.isDark = !this.isDark;
+    document.body.classList.toggle('dark', this.isDark)
+  }
 }
