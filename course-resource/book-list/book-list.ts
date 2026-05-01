@@ -6,7 +6,6 @@ import { Book } from '../books/book.model';
 
 @Component({
   selector: 'app-book-list',
-  standalone: true,
   imports: [RouterLink, DatePipe],
   templateUrl: './book-list.html',
   styleUrl: './book-list.scss',
