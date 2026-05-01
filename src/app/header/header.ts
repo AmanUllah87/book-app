@@ -8,7 +8,6 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.scss',
-  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class Header {
   cartItem: IProduct[];
