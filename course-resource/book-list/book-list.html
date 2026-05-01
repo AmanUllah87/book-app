@@ -1,0 +1,51 @@
+<div class="container">
+  <button routerLink="/books/edit">+ Add Book</button>
+
+  <h2>Top Rated Books</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (book of topRatedBooks; track book.id) {
+        <tr [routerLink]="['/books/edit', book.id]">
+          <td>{{ book.name }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.category }}</td>
+          <td>{{ book.rating }} ★</td>
+        </tr>
+      } @empty {
+        <tr><td class="center" colspan="4">No top-rated books yet</td></tr>
+      }
+    </tbody>
+  </table>
+
+  <h2>All Books</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Published</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (book of books; track book.id) {
+        <tr [routerLink]="['/books/edit', book.id]">
+          <td>{{ book.name }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.category }}</td>
+          <td>{{ book.publishedYear | date:'yyyy' }}</td>
+        </tr>
+      } @empty {
+        <tr><td class="center" colspan="4">No books found</td></tr>
+      }
+    </tbody>
+  </table>
+</div>
