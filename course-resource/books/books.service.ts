@@ -11,14 +11,4 @@ export class BooksService {
     return this.http.get<Book[]>('/api/books');
   }
 
-  getBook(id: number): Observable<Book> {
-    return this.http.get<Book>(`/api/books/${id}`);
-  }
-
-  saveBook(book: Book): Observable<Book> {
-    if (!book.id) {
-      return this.http.post<Book>('/api/books', book);
-    }
-    return this.http.put<Book>(`/api/books/${book.id}`, book);
-  }
 }
