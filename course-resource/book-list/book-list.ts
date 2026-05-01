@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { BooksService } from '../books/books.service';
 import { Book } from './book.model';
+import { BooksService } from '../services/books.service';
 
 @Component({
   selector: 'app-book-list',
