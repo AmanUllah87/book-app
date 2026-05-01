@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-book',
-  standalone: true,
   imports: [RouterLink],
   templateUrl: './edit-book.html',
   styleUrl: './edit-book.scss',
