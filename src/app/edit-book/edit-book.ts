@@ -17,8 +17,8 @@ export class EditBook implements OnInit {
       id: 0,
       name: '',
       author: '',
-      publishedYear: null,
-      rating: null,
+      publishedYear: '',
+      rating: 0,
       publisher: {
         publisherName: '',
         publisherType: ''
