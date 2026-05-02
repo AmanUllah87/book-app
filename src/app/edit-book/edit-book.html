@@ -5,8 +5,10 @@
   <form #form="ngForm"  (ngSubmit)="saveBook(form)" >
     
     <section #section>
+      
       <nav>Book Info</nav>
       <div>
+        <input [hidden]="true" type="number" [(ngModel)] = "book.id" name="id">
         <input placeholder="Book Name" [(ngModel)]="book.name" name="name"/>
         <div>
           <!-- {{book.name}} -->
