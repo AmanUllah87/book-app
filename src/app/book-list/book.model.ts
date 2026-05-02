@@ -4,7 +4,7 @@ export interface Book {
   author: string;
   publishedYear: string;
   rating: number;
-  publisher: Publisher;
+  publisher: Partial<Publisher>;
   category: string;
   description: string;
 }

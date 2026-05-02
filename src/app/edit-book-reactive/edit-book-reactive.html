@@ -1,0 +1,46 @@
+<div class="content">
+  <h1>Edit Book</h1>
+
+  <form [formGroup]="form" >
+    <section>
+      <nav>Book Info</nav>
+      <div>
+        <input placeholder="Book Name" formControlName="name"  />
+        <input placeholder="Author" formControlName="author" />
+        <input type="date" placeholder="Published Date" formControlName="publishedYear" />
+        <input type="number" placeholder="Rating (1–5)" formControlName="rating" />
+      </div>
+    </section>
+
+    <section formGroupName="publisher">
+      <nav>Publisher</nav>
+      <div>
+        <input placeholder="Publisher Name" formControlName="publisherName" />
+        <div class="radio">
+          <label><input type="radio" value="traditional" formControlName="publisherType"  /> Traditional</label>
+          <label><input type="radio" value="self-published" formControlName="publisherType" /> Self-Published</label>
+          <label><input type="radio" value="academic" formControlName="publisherType" /> Academic</label>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <nav>Category</nav>
+      <div>
+        <select formControlName="category">
+          <option value="">-- Select Category --</option>
+          <option value="Programming">Programming</option>
+          <option value="Algorithms">Algorithms</option>
+          <option value="System Design">System Design</option>
+          <option value="Software Engineering">Software Engineering</option>
+        </select>
+        <textarea placeholder="Description" formControlName="description"></textarea>
+      </div>
+    </section>
+  </form>
+
+  <div class="buttons">
+    <button class="secondary" routerLink="/books">Cancel</button>
+    <button (click)="saveBook()">Save</button>
+  </div>
+</div>

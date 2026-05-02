@@ -1,5 +1,5 @@
 <div class="container">
-  <button routerLink="/books/edit">+ Add Book</button>
+  <button routerLink="/books/edit/reactive">+ Add Book</button>
 
   <h2>Top Rated Books</h2>
   <table>
@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       @for (book of topRatedBooks; track book.id) {
-        <tr [routerLink]="['/books/edit', book.id]">
+        <tr [routerLink]="['/books/edit/reactive', book.id]">
           <td>{{ book.name }}</td>
           <td>{{ book.author }}</td>
           <td>{{ book.category }}</td>
@@ -37,7 +37,7 @@
     </thead>
     <tbody>
       @for (book of books; track book.id) {
-        <tr [routerLink]="['/books/edit', book.id]">
+        <tr [routerLink]="['/books/edit/reactive', book.id]">
           <td>{{ book.name }}</td>
           <td>{{ book.author }}</td>
           <td>{{ book.category }}</td>

@@ -15,7 +15,7 @@ export class BooksService {
     return this.http.get<Book>(`/api/books/${id}`)
   }
 
-  save(book: Book): Observable<Book>{
+  save(book: Partial<Book>): Observable<Book>{
     if(!book.id){
        return this.http.post<Book>(`/api/books`, book)
     }

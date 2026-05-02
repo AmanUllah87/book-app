@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../book-list/book.model';
@@ -48,16 +48,19 @@ export class EditBook implements OnInit {
   }
 
   saveBook(form: NgForm) {
-    // console.log(form.value)
+    console.log(form)
     console.log(this.book)
 
-    this.bookService.save(form.value).pipe(delay(3000)).subscribe(res => {
-      console.log(res)
-      this.router.navigate(['/books'])
-    })
+    // this.bookService.save(form.value).pipe(delay(3000)).subscribe(res => {
+    //   console.log(res)
+    //   this.router.navigate(['/books'])
+    // })
   }
 
   checkH1(h1: HTMLHeadElement){
     console.log(h1)
+  }
+  checkNameNgModel(ngM: NgModel){
+    console.log(ngM)
   }
 }
