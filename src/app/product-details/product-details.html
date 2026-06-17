@@ -1,15 +1,15 @@
 <div class="product">
   <div class="product-details">
-    <img [src]="`/books/${product?.imageName}`" [alt]="product?.name" />
+    <img [src]="`/books/${product.imageName}`" [alt]="product.name" />
     <div class="product-info">
-      <div class="name">{{ product?.name }}</div>
-      <div class="description">{{ product?.description }}</div>
-      <div class="category">Book Type: {{ product?.category }}</div>
+      <div class="name">{{ product.name }}</div>
+      <div class="description">{{ product.description }}</div>
+      <div class="category">Book Type: {{ product.category }}</div>
     </div>
   </div>
   <div class="price">
     <div [ngClass]="{ strikethrough: product.discount > 0 }">
-      {{ (product?.price | currency: 'BDT' : '৳') + 'TK' }}
+      {{ (product.price | currency: 'BDT' : '৳') + 'TK' }}
     </div>
 
     <div class="discount-price">

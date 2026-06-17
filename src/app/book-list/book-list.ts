@@ -1,28 +1,31 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DatePipe, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { Book } from './book.model';
 import { BooksService } from '../services/books.service';
 import { delay } from 'rxjs';
 import { Highlight } from '../directive/highlight';
 import { Show } from '../directive/show';
+import { AuthorHighlight } from '../directive/author-highlight';
+import { BookHide } from '../directive/book-hide';
 
 @Component({
   selector: 'app-book-list',
-  imports: [RouterLink, DatePipe, NgTemplateOutlet, NgIf,Highlight, Show ],
+  imports: [RouterLink, NgTemplateOutlet, Highlight, Show, AuthorHighlight, BookHide],
   templateUrl: './book-list.html',
   styleUrl: './book-list.scss',
 })
 export class BookList implements OnInit {
   books: Book[] = [];
 
-  
+  isLoading = true;
 
   constructor(private booksService: BooksService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.booksService.getAllBooks().pipe(delay(5000)).subscribe(books => {
       this.books = books;
+      this.isLoading = false;
       this.cdr.detectChanges();
     });
   }

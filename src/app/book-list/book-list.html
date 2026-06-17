@@ -7,34 +7,41 @@
 </ng-template> -->
 
   <h2>Top Rated Books</h2>
-  <h2>Top Rated Books</h2>
   <table>
     <thead>
       <ng-container *ngTemplateOutlet="bookHeader"></ng-container>
     </thead>
     <tbody>
-      @for (book of topRatedBooks; track book.id; let i = $index) {
-        <ng-container
-          *ngTemplateOutlet="bookRow; context: { $implicit: book, index: i }"
-        ></ng-container>
-      } @empty {
-        <ng-container *ngTemplateOutlet="noDataFound"> </ng-container>
+      @if (isLoading) {
+        <ng-container *ngTemplateOutlet="loadingRow"></ng-container>
+      } @else {
+        @for (book of topRatedBooks; track book.id; let i = $index) {
+          <ng-container
+            *ngTemplateOutlet="bookRow; context: { $implicit: book, index: i }"
+          ></ng-container>
+        } @empty {
+          <ng-container *ngTemplateOutlet="noDataFound"> </ng-container>
+        }
       }
     </tbody>
   </table>
 
-  <h2>All Books</h2>
+  <h2 *bookHide="books.length === 0">All Books</h2>
   <table>
     <thead>
       <ng-container *ngTemplateOutlet="bookHeader"></ng-container>
     </thead>
     <tbody>
-      @for (book of books; track book.id; let i = $index) {
-        <ng-container
-          *ngTemplateOutlet="bookRow; context: { $implicit: book, index: i }"
-        ></ng-container>
-      } @empty {
-        <ng-container *ngTemplateOutlet="noDataFound"> </ng-container>
+      @if (isLoading) {
+        <ng-container *ngTemplateOutlet="loadingRow"></ng-container>
+      } @else {
+        @for (book of books; track book.id; let i = $index) {
+          <ng-container
+            *ngTemplateOutlet="bookRow; context: { $implicit: book, index: i }"
+          ></ng-container>
+        } @empty {
+          <ng-container *ngTemplateOutlet="noDataFound"> </ng-container>
+        }
       }
     </tbody>
   </table>
@@ -60,9 +67,18 @@
   <tr bookHighlight #bookhighlightTemplateRef="bookHighlight" [rating]="book.rating" >
     <td>{{ i + 1 }}</td>
     <td (click)="bookhighlightTemplateRef.externalUses()" >{{ book.name }}</td>
-    <td>{{ book.author }}</td>
+    <td authorHighlight #authorRef="authorHighlight" [authorName]="book.author"
+        (click)="authorRef.logAuthor()">
+      {{ book.author }}
+    </td>
     <td>{{ book.category }}</td>
     <td>{{ book.rating }} ★</td>
+  </tr>
+</ng-template>
+
+<ng-template #loadingRow>
+  <tr>
+    <td colspan="4" class="center">Loading books, please wait...</td>
   </tr>
 </ng-template>
 

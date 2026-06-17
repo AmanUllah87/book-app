@@ -1,0 +1,133 @@
+<div class="content">
+  <h1>Write a Review</h1>
+
+  @if (!submitted) {
+  <form #reviewForm="ngForm" (ngSubmit)="submitReview(reviewForm)">
+
+    <section ngModelGroup="reviewer">
+      <nav>Reviewer</nav>
+      <div>
+        <input
+          placeholder="Reviewer Name"
+          [(ngModel)]="review.reviewer.name"
+          name="name"
+          #name="ngModel"
+          required
+          minlength="3"
+        />
+        @if (name.touched && name.invalid) {
+          <div class="error">
+            @if (name.errors?.['required']) {
+              <span>Reviewer name is required.</span>
+            }
+            @if (name.errors?.['minlength']) {
+              <span>Reviewer name must be at least 3 characters.</span>
+            }
+          </div>
+        }
+
+        <input
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="review.reviewer.email"
+          name="email"
+          #email="ngModel"
+          required
+          email
+        />
+        @if (email.touched && email.invalid) {
+          <div class="error">
+            @if (email.errors?.['required']) {
+              <span>Email is required.</span>
+            }
+            @if (email.errors?.['email']) {
+              <span>Please enter a valid email address.</span>
+            }
+          </div>
+        }
+      </div>
+    </section>
+
+    <section>
+      <nav>Rating</nav>
+      <div>
+        <input
+          type="number"
+          placeholder="Rating (1-5)"
+          [(ngModel)]="review.rating"
+          name="rating"
+          #rating="ngModel"
+          required
+          min="1"
+          max="5"
+        />
+        @if (rating.touched && rating.invalid) {
+          <div class="error">
+            @if (rating.errors?.['required']) {
+              <span>Rating is required.</span>
+            }
+            @if (rating.errors?.['min'] || rating.errors?.['max']) {
+              <span>Rating must be between 1 and 5.</span>
+            }
+          </div>
+        }
+      </div>
+    </section>
+
+    <section>
+      <nav>Review</nav>
+      <div>
+        <input
+          placeholder="Review Title"
+          [(ngModel)]="review.title"
+          name="title"
+          #title="ngModel"
+          required
+        />
+        @if (title.touched && title.invalid) {
+          <div class="error">
+            @if (title.errors?.['required']) {
+              <span>Review title is required.</span>
+            }
+          </div>
+        }
+
+        <textarea
+          placeholder="Review Body"
+          [(ngModel)]="review.body"
+          name="body"
+          #body="ngModel"
+          required
+          minlength="20"
+        ></textarea>
+        @if (body.touched && body.invalid) {
+          <div class="error">
+            @if (body.errors?.['required']) {
+              <span>Review body is required.</span>
+            }
+            @if (body.errors?.['minlength']) {
+              <span>Review body must be at least 20 characters.</span>
+            }
+          </div>
+        }
+
+        <label class="checkbox">
+          <input type="checkbox" [(ngModel)]="review.recommend" name="recommend" />
+          Would Recommend
+        </label>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <button class="secondary" routerLink="/books">Cancel</button>
+      <button type="submit" [disabled]="reviewForm.invalid">Submit Review</button>
+    </div>
+  </form>
+  }
+
+  @if (submitted) {
+  <div class="thank-you">
+    <p>Thank you, {{ reviewerName }}! Your review has been submitted.</p>
+  </div>
+  }
+</div>

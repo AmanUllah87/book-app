@@ -1,13 +1,12 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { IProduct } from './product.model';
-import { CurrencyPipe, NgClass, NgStyle } from '@angular/common';
 import { ProductDetails } from '../product-details/product-details';
 import { Cart } from '../cart';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'book-catalog',
-  imports: [CurrencyPipe, NgClass, NgStyle, ProductDetails],
+  imports: [ProductDetails],
   templateUrl: './catalog.html',
   styleUrl: './catalog.scss',
 })

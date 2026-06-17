@@ -4,6 +4,7 @@ import { Catalog } from './catalog/catalog';
 import { BookList } from './book-list/book-list';
 import { EditBook } from './edit-book/edit-book';
 import { EditBookReactive } from './edit-book-reactive/edit-book-reactive';
+import { BookReview } from './book-review/book-review';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,10 @@ export const routes: Routes = [
     {
         path: "books",
         component: BookList
+    },
+    {
+        path: "review",
+        component: BookReview
     },
     {
         path: "books/edit",
