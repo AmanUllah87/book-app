@@ -1,0 +1,85 @@
+<div class="container">
+  <button *bookShow="true" routerLink="/books/edit/reactive">+ Add Book</button>
+  <div *bookShow="true">ngIf Directive</div>
+
+<!-- <ng-template [bookShow]="true" >
+  <div *bookShow="true">ngIf Directive</div>
+</ng-template> -->
+
+  <h2>Top Rated Books</h2>
+  <table>
+    <thead>
+      <ng-container *ngTemplateOutlet="bookHeader"></ng-container>
+    </thead>
+    <tbody>
+      @if (isLoading) {
+        <ng-container *ngTemplateOutlet="loadingRow"></ng-container>
+      } @else {
+        @for (book of topRatedBooks; track book.id; let i = $index) {
+          <ng-container
+            *ngTemplateOutlet="bookRow; context: { $implicit: book, index: i }"
+          ></ng-container>
+        } @empty {
+          <ng-container *ngTemplateOutlet="noDataFound"> </ng-container>
+        }
+      }
+    </tbody>
+  </table>
+
+  <h2 *bookHide="books.length === 0">All Books</h2>
+  <table>
+    <thead>
+      <ng-container *ngTemplateOutlet="bookHeader"></ng-container>
+    </thead>
+    <tbody>
+      @if (isLoading) {
+        <ng-container *ngTemplateOutlet="loadingRow"></ng-container>
+      } @else {
+        @for (book of books; track book.id; let i = $index) {
+          <ng-container
+            *ngTemplateOutlet="bookRow; context: { $implicit: book, index: i }"
+          ></ng-container>
+        } @empty {
+          <ng-container *ngTemplateOutlet="noDataFound"> </ng-container>
+        }
+      }
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noDataFound>
+  <tr>
+    <td class="center" colspan="4">No books found yet.</td>
+  </tr>
+</ng-template>
+
+<ng-template #bookHeader>
+  <tr>
+    <th>Serial Number</th>
+    <th>Name</th>
+    <th>Author</th>
+    <th>Category</th>
+    <th>Rating</th>
+  </tr>
+</ng-template>
+
+<ng-template #bookRow let-book let-i="index">
+  <tr bookHighlight #bookhighlightTemplateRef="bookHighlight" [rating]="book.rating" >
+    <td>{{ i + 1 }}</td>
+    <td (click)="bookhighlightTemplateRef.externalUses()" >{{ book.name }}</td>
+    <td authorHighlight #authorRef="authorHighlight" [authorName]="book.author"
+        (click)="authorRef.logAuthor()">
+      {{ book.author }}
+    </td>
+    <td>{{ book.category }}</td>
+    <td>{{ book.rating }} ★</td>
+  </tr>
+</ng-template>
+
+<ng-template #loadingRow>
+  <tr>
+    <td colspan="4" class="center">Loading books, please wait...</td>
+  </tr>
+</ng-template>
+
+

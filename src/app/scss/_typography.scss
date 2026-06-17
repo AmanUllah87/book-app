@@ -1,0 +1,30 @@
+a {
+  color: #444;
+  text-decoration: none;
+
+  &:visited { color: #444; }
+  &:hover { color: #5cadd2; }
+
+  &.active {
+    color: #8B2635;
+    font-weight: bold;
+    background-color: #f5e6e8;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  &.button.active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #d25ca1;
+  }
+
+  &.cta {
+    color: #d25ca1;
+    &:visited { color: #d25ca1; }
+    &:hover { color: #f27cb1; }
+  }
+}
+
+.cta {
+  color: #d25ca1;
+}

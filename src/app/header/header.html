@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="left">
+    <a class="brand" routerLink="/home" >
+      <img class="logo" src="logo.svg" alt="The Programming Hub" />
+      <span class="brand-name">The Programming Hub</span>
+    </a>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/catalog" routerLinkActive="active">Catalog</a>
+    <a routerLink="/books" routerLinkActive="active">Books</a>
+    <a routerLink="/review" routerLinkActive="active">Write a Review</a>
+    <div class="cart">
+      <a>Cart</a>
+    </div>
+     <button (click)="changeAppTheme()" >{{ isDark ? 'Light' : 'Dark' }}</button>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="product">
+  <div class="product-details">
+    <img [src]="`/books/${product.imageName}`" [alt]="product.name" />
+    <div class="product-info">
+      <div class="name">{{ product.name }}</div>
+      <div class="description">{{ product.description }}</div>
+      <div class="category">Book Type: {{ product.category }}</div>
+    </div>
+  </div>
+  <div class="price">
+    <div [ngClass]="{ strikethrough: product.discount > 0 }">
+      {{ (product.price | currency: 'BDT' : '৳') + 'TK' }}
+    </div>
+
+    <div class="discount-price">
+      {{ product.price * (1 - product.discount) | currency }}
+    </div>
+
+    <button (click)="addToCart(product)" class="cta">Buy</button>
+  </div>
+</div>

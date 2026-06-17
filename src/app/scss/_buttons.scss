@@ -1,0 +1,30 @@
+button,
+a.button {
+  font-size: 15px;
+  padding: 15px 25px;
+  background-color: #5cadd2;
+  color: #fff;
+  border: 0;
+  box-shadow: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a.button:hover { color: #1c6d92; }
+
+button {
+  &:disabled { background-color: #777; }
+  &:hover { color: #1c6d92; }
+
+  &.cta {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d25ca1;
+    color: #ddd;
+    &:hover { color: #fff; }
+  }
+}
+
+.button.cta:disabled {
+  background-color: #f590c4;
+  color: #aaa;
+}

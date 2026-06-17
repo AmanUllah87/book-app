@@ -1,0 +1,43 @@
+.container {
+  padding: 20px 100px;
+}
+
+h2 {
+  background-color: #8B2635;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 20px;
+  margin: 20px 0 0 0;
+}
+
+table {
+  text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+tr {
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #fdf0f2;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #C9B99A;
+}
+
+th {
+  background-color: #5cadd2;
+  color: #fff;
+  font-weight: 600;
+}
+
+.center {
+  text-align: center;
+  color: #777;
+}

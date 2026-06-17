@@ -1,0 +1,46 @@
+<div class="content">
+  <h1>Edit Book</h1>
+
+  <form>
+    <section>
+      <nav>Book Info</nav>
+      <div>
+        <input placeholder="Book Name" />
+        <input placeholder="Author" />
+        <input type="date" placeholder="Published Date" />
+        <input type="number" placeholder="Rating (1–5)" />
+      </div>
+    </section>
+
+    <section>
+      <nav>Publisher</nav>
+      <div>
+        <input placeholder="Publisher Name" />
+        <div class="radio">
+          <label><input type="radio" value="traditional" /> Traditional</label>
+          <label><input type="radio" value="self-published" /> Self-Published</label>
+          <label><input type="radio" value="academic" /> Academic</label>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <nav>Category</nav>
+      <div>
+        <select>
+          <option value="">-- Select Category --</option>
+          <option value="Programming">Programming</option>
+          <option value="Algorithms">Algorithms</option>
+          <option value="System Design">System Design</option>
+          <option value="Software Engineering">Software Engineering</option>
+        </select>
+        <textarea placeholder="Description"></textarea>
+      </div>
+    </section>
+  </form>
+
+  <div class="buttons">
+    <button class="secondary" routerLink="/books">Cancel</button>
+    <button (click)="saveBook()">Save</button>
+  </div>
+</div>

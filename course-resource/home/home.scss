@@ -1,0 +1,159 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Hero Banner ── */
+.hero {
+  background: linear-gradient(135deg, #2C2416 0%, #4a2020 45%, #8B2635 80%, #C68B3A 100%);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero-title {
+  color: #FAF7F2;
+  font-size: 52px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.hero-subtitle {
+  color: #C9B99A;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* ── Promo Strip ── */
+.promoted {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px;
+  border-top: 2px solid #C9B99A;
+  border-bottom: 2px solid #C9B99A;
+  padding: 10px 150px 10px 150px;
+}
+
+.promoted img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.promo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 40px 0 40px 0;
+}
+
+.promo-main-text {
+  font-size: 24px;
+  text-align: center;
+}
+
+.promo-sub-text {
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ── Category CTA ── */
+.books-cta {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 100px 25px 100px;
+  padding: 10px 0;
+}
+
+.part {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.part img {
+  width: 160px;
+  height: 210px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #E8DDD0;
+}
+
+/* ── Feature Panel ── */
+.feature-panel {
+  display: flex;
+  height: 400px;
+  margin: 0 25px 25px 25px;
+}
+
+.book-grid {
+  width: 75%;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.book-grid img {
+  width: calc(50% - 2px);
+  height: calc(50% - 2px);
+  object-fit: cover;
+}
+
+.feature-panel .text {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  background-color: #2C2416;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.feature-panel .header-text {
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+.feature-panel .sub-text {
+  font-size: 20px;
+  color: #C68B3A;
+  margin-top: 10px;
+  padding: 0 15%;
+}
+
+.feature-panel .sub-text p {
+  margin: 0;
+}
+
+.feature-panel .large-text {
+  border-top: 2px solid #C9B99A;
+  border-bottom: 2px solid #C9B99A;
+  margin-top: -50px;
+  padding: 20px 0;
+  font-size: 35px;
+  color: #fff;
+}
+
+.feature-panel .learn-more {
+  background-color: #8B2635;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  display: block;
+}

@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-title">The Programming Hub</div>
+      <div class="hero-subtitle">Your destination for Computer Science &amp; Engineering books</div>
+      <a class="button">Browse All Books</a>
+    </div>
+  </div>
+
+  <div class="promoted">
+    <img src="/books/algorithms-cracking-coding.jpg" alt="Designing Data-Intensive Applications" />
+    <div class="promo-text">
+      <div class="promo-main-text">LEVEL UP YOUR ENGINEERING SKILLS</div>
+      <div class="promo-sub-text cta">
+        <div>SAVE 20% ON SELECTED</div>
+        <div>SYSTEM DESIGN TITLES</div>
+      </div>
+    </div>
+    <img src="/books/algorithms-cracking-coding.jpg" alt="Clean Code" />
+  </div>
+
+  <ul class="books-cta">
+    <li>
+      <a class="part">
+        <img src="/books/programming-clean-code.jpg" alt="Programming" />
+        <div>PROGRAMMING</div>
+      </a>
+    </li>
+    <li>
+      <a class="part" [routerLink]="['/catalog']" [queryParams]="{filter: 'Algorithms'}">
+        <img  src="/books/algorithms-cracking-coding.jpg" alt="Algorithms" />
+        <div>ALGORITHMS</div>
+      </a>
+    </li>
+    <li>
+      <a class="part">
+        <img src="/books/algorithms-cracking-coding.jpg" alt="System Design" />
+        <div>SYSTEM DESIGN</div>
+      </a>
+    </li>
+    <li>
+      <a class="part">
+        <img src="/books/algorithms-cracking-coding.jpg" alt="Software Engineering" />
+        <div>SOFTWARE ENGINEERING</div>
+      </a>
+    </li>
+  </ul>
+
+  <div class="feature-panel">
+    <div class="book-grid">
+      <img src="/books/book-in-table.png" alt="Clean Code" />
+      <img src="/books/codebug-books.jpg" alt="Grokking Algorithms" />
+      <img src="/books/f-sharp-programming-books.jpg" alt="DDIA" />
+      <img src="/books/the-pragmatic-programmer.jpg" alt="Mythical Man-Month" />
+    </div>
+    <div class="text">
+      <div>
+        <div class="header-text cta">Find your perfect read</div>
+        <div class="sub-text">
+          <p>Staff picks &amp;</p>
+          <p>hidden gems</p>
+        </div>
+      </div>
+      <div class="large-text">CURATED READS</div>
+      <a class="learn-more">Browse Picks</a>
+    </div>
+  </div>
+</div>

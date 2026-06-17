@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="filters">
+    <a class="button" (click)="productFilter = ''">All</a>
+    <a class="button" (click)="productFilter = 'Programming'">Programming</a>
+    <a class="button" (click)="productFilter = 'Algorithms'">Algorithms</a>
+    <a class="button" (click)="productFilter = 'System Design'">System Design</a>
+    <a class="button">Software Eng.</a>
+  </div>
+
+  @if (products.length > 0) {
+    <ul class="products">
+    @for (item of getFilteredProducts(); track item.id) {
+      <li class="product-item">
+        <book-product-details
+          [product]="item"
+          .
+          (buyClicked)="addToCart($event)"
+        ></book-product-details>
+      </li>
+    }
+  </ul>
+  }
+</div>

@@ -1,0 +1,103 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #C9B99A;
+  margin: 20px 100px;
+}
+
+h1 {
+  background-color: #8B2635;
+  color: #fff;
+  font-size: 26px;
+  padding: 8px 14px;
+  margin: 0;
+}
+
+section {
+  display: flex;
+  border-bottom: 2px solid #C9B99A;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+section nav {
+  background-color: #8B2635;
+  color: #fff;
+  flex: 0 0 180px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+section > div {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 20px;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+input,
+select,
+textarea {
+  padding: 8px 10px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px solid #C9B99A;
+  border-radius: 4px;
+  max-width: 500px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.checkbox input[type='checkbox'] {
+  width: auto;
+  padding: 0;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  color: #8B2635;
+  font-size: 13px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  padding: 14px 20px;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+button.secondary {
+  background-color: #fff;
+  color: #8B2635;
+  border: 2px solid #8B2635;
+}
+
+button.secondary:hover {
+  background-color: #fdf0f2;
+}
+
+.thank-you {
+  padding: 30px 20px;
+  font-size: 18px;
+  color: #8B2635;
+}
